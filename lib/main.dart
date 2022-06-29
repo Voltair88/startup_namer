@@ -69,7 +69,6 @@ class _RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // NEW from here ...
       appBar: AppBar(
         title: const Text('Startup Name Generator'),
         actions: [
@@ -83,7 +82,7 @@ class _RandomWordsState extends State<RandomWords> {
       body: ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemBuilder: (context, i) {
-          if (i.isOdd) return Divider();
+          if (i.isOdd) return const Divider();
           final index = i ~/ 2;
           if (index >= _suggestions.length) {
             _suggestions.addAll(generateWordPairs().take(10));
